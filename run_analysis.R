@@ -1,8 +1,8 @@
-library(reshape2)
+##other users have used a library to access a package of some sort, but that was not necessary for me, seeing as I already had access to the necessary functions within the package I already had
 
 filename <- "getdata_dataset.zip"
 
-## Download and unzip the dataset:
+## if not already done, this downloads and unzips the dataset:
 if (!file.exists(filename)){
   fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "
   download.file(fileURL, filename, method="curl")
@@ -12,17 +12,17 @@ if (!file.exists("UCI HAR Dataset")) {
 }
 
 # Load activity labels + features
-activityLabels <- read.table("UCI HAR Dataset/activity_labels.txt")
-activityLabels[,2] <- as.character(activityLabels[,2])
-features <- read.table("UCI HAR Dataset/features.txt")
-features[,2] <- as.character(features[,2])
+activityLabel <- read.table("UCI HAR Dataset/activity_labels.txt")
+activityLabel[,2] <- as.character(activityLabels[,2])
+feature <- read.table("UCI HAR Dataset/features.txt")
+feature[,2] <- as.character(features[,2])
 
-# Extract only the data on mean and standard deviation
-featuresWanted <- grep(".*mean.*|.*std.*", features[,2])
-featuresWanted.names <- features[featuresWanted,2]
-featuresWanted.names = gsub('-mean', 'Mean', featuresWanted.names)
-featuresWanted.names = gsub('-std', 'Std', featuresWanted.names)
-featuresWanted.names <- gsub('[-()]', '', featuresWanted.names)
+# isolate the data to only getting the mean and standard deviation
+dataDesired <- grep(".*mean.*|.*std.*", feature[,2])
+dataDesired.names <- features[dataDesired,2]
+dataDesired.names = gsub('-mean', 'Mean', dataDesired.names)
+dataDesired.names = gsub('-std', 'Std', dataDesired.names)
+dataDesired.names <- gsub('[-()]', '', dataDesired.names)
 
 
 # Load the datasets
