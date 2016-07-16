@@ -1,6 +1,6 @@
 # Code Book
 
-This code book summarizes the resulting data fields in `tidy.txt`.
+This code book contains, states, and explains the resulting data fields in `tidy.txt`.
 
 ## Identifiers
 
@@ -91,9 +91,9 @@ This code book summarizes the resulting data fields in `tidy.txt`.
 
 ## Activity Labels
 
-* `WALKING` (value `1`): subject was walking during the test
-* `WALKING_UPSTAIRS` (value `2`): subject was walking up a staircase during the test
-* `WALKING_DOWNSTAIRS` (value `3`): subject was walking down a staircase during the test
-* `SITTING` (value `4`): subject was sitting during the test
-* `STANDING` (value `5`): subject was standing during the test
-* `LAYING` (value `6`): subject was laying down during the test
+* `WALKING` (`1` value): subject was walking while testing
+* `WALKING_UPSTAIRS` (`2` value): subject was walking up a staircase while testing
+* `WALKING_DOWNSTAIRS` (`3` value): subject was walking down a staircase while testing
+* `SITTING` (`4` value): subject was in a seated position while testing
+* `STANDING` (`5` value): subject was in standing, still position during testing
+* `LAYING` (`6` value): subject was laying down while
